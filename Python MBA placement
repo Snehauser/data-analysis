@@ -1,0 +1,41 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(host='localhost', user='root', passwd='password', database='telusko')
+
+mycursor = mydb.cursor()
+
+mycursor.execute('select gender, count(s_id)
+from college
+where status = 'Placed'
+group by gender;')
+
+mycursor.execute('select gender, count(s_id)
+from college
+where status = 'Placed'
+group by gender;')
+
+mycursor.execute('select gender, count(s_id)
+from college
+group by gender;')
+
+mycursor.execute('select workex, count(s_id)
+from college
+where status = 'Placed'
+group by workex;')
+
+mycursor.execute('select workex, count(s_id)
+from college
+group by workex;')
+
+mycursor.execute('select degree_t, count(s_id)
+from college
+where status = 'Placed'
+group by degree_t;')
+
+mycursor.execute('select status, avg(hsc_p)
+from college
+group by status;')
+
+mycursor.execute('select status, avg(ssc_p)
+from college
+group by status;')
